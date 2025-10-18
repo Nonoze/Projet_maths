@@ -1,0 +1,23 @@
+Sur une règle graduée standard d'une longueur de \( \ell \geq 1 \) unités, il y a \( \ell + 1 \) graduations placées à intervalles réguliers de 1 unité. Pour mesurer un objet de longueur entière, on place habituellement la règle de sorte à ce qu'une extrémité de l'objet se trouve sur la graduation 0. La graduation se trouvant à l'autre extrémité de l'objet indique alors sa longueur.
+
+Cela étant dit, il est possible de mesurer certains objets de plusieurs manières différentes. Par exemple, si \( \ell = 5 \), il est possible de mesurer une longueur de 2 de 4 manières possibles, en considérant les écarts respectifs entre les graduations 0 et 2, 1 et 3, 4 et 2, ou encore 5 et 3. Le point commun est que la différence entre les graduations est toujours égale à 2, c'est-à-dire :
+\[
+2 - 0 = 3 - 1 = 4 - 2 = 5 - 3 = 2.
+\]
+
+Si l'on efface certaines graduations, il est parfois encore possible de mesurer les mêmes longueurs qu'auparavant. Par exemple, si \( \ell = 7 \), nous avons \(8\) graduations. Il est possible, par exemple, de garder seulement les graduations 0, 1, 2, 4 et 7.
+
+Le problème général est le suivant : en fonction de \(\ell\), quel est le nombre minimal \( m(\ell) \) de graduations qui permet de mesurer toutes les longueurs inférieures ou égales à \(\ell\) ? C'est une question difficile, et pour laquelle une réponse générale est peut-être hors de portée. Néanmoins, on pourra envisager les questions suivantes, qui feront progresser notre compréhension du problème :
+
+\begin{enumerate}
+	\renewcommand{\labelenumi}{\textnormal{(\roman{enumi})}}
+    \item On peut commencer par étudier en détail des exemples avec des petites valeurs de \(\ell\), par exemple toutes les valeurs \(1 \leq \ell \leq 10\).
+    \item On peut aussi réfléchir à un encadrement de \(m(\ell)\), pour estimer à quel point ce nombre peut-être grand ou petit. Par exemple, il est clair que \( m(\ell) \leq \ell + 1 \).
+    \item On peut imaginer une méthode de construction générale d'une règle de longueur \(\ell\), qui n'atteint peut-être pas la configuration optimale, mais qui semblerait déjà assez bonne. Par exemple, on peut essayer d'imaginer une méthode de construction qui permet de toujours enlever au moins la moitié des graduations.
+    \item On peut poser exactement les mêmes questions dans une variante circulaire, où il est question de mesurer des longueurs d'arc sur un cercle divisé en \(\ell\) arcs de même longueur. Quels liens peut-on établir entre les versions rectiligne et circulaire du problème ?
+\end{enumerate}
+
+
+\vspace{1\baselineskip}
+
+Le problème consiste donc à déterminer le nombre $m(l)$ minimal de graduations nécessaires pour mesurer toute longueur entière de 1 à $l$ avec une règle de longueur $l$.

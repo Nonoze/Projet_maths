@@ -1,0 +1,53 @@
+\underline{\textit{(ii) Trouver des bornes pour $m(l)$}}.
+
+\vspace{1\baselineskip}
+
+1. \textbf{Borne inférieure:} $m(l) \geq \frac{1+\sqrt{8l+1}}{2}$.
+
+\begin{itemize}[leftmargin=2cm]
+	\item \textbf{Démonstration:} Pour tout $n \in \mathbb{N}$, le nombre de paires $(i,j)$ avec $1 \leq i < j \leq n$ est donné par $\binom{n}{2} = \frac{n(n-1)}{2}$. Si le nombre de graduations est $m(l)$, alors le nombre de différences distinctes que l'on peut obtenir est au plus $\binom{m(l)}{2}$. Pour mesurer toutes les longueurs de 1 à $l$, il faut donc que:
+	\[
+		\binom{m(l)}{2} \geq l
+	\]
+	Cela conduit à l'inégalité quadratique:
+	\[
+		\frac{m(l)(m(l)-1)}{2} \geq l \iff m(l)^2 - m(l) - 2l \geq 0
+	\]
+	En résolvant cette inégalité, on obtient:
+	\[
+		m(l) \geq \frac{1 + \sqrt{1 + 8l}}{2}
+	\]
+	Ceci établit la borne inférieure.
+
+\end{itemize}
+
+
+
+
+\vspace{1\baselineskip}
+
+
+2. \textbf{Borne supérieure:} $m(l) \leq 2\sqrt{l} + 1$.
+
+\begin{itemize}[leftmargin=2cm]
+	\item \textbf{Démonstration:} Considérons une règle avec des graduations placées aux positions $0, 1, 2, \ldots, n-1$ et aux positions $2n - 1, 3n - 1, \ldots, kn - 1, l$ où $k = \lfloor \frac{l}{n} \rfloor$. Le nombre total de graduations est donc $n + k - 1 + 1 = n + k = n + \lfloor \frac{l}{n} \rfloor$.
+	Pour mesurer toutes les longueurs de 1 à $l$, il suffit de choisir $n$ tel que $n \approx \sqrt{l}$. En effet, en choisissant $n = \lceil \sqrt{l} \rceil$, on a:
+	\[
+		m(l) \leq n + \lfloor \frac{l}{n} \rfloor \leq \lceil \sqrt{l} \rceil + \lfloor \frac{l}{\lceil \sqrt{l} \rceil} \rfloor \leq \lceil \sqrt{l} \rceil + \lfloor \sqrt{l} \rfloor \leq 2 \lfloor \sqrt{l} \rfloor + 1
+	\]
+	Ceci établit la borne supérieure.
+\end{itemize}
+
+
+
+\vspace{2\baselineskip}
+
+Nous avons donc montré que:
+
+\begin{align*}
+	\frac{1 + \sqrt{1 + 8l}}{2} \leq m(l) \leq 2 \lfloor \sqrt{l} \rfloor + 1 \\
+	\implies \frac{1 + \sqrt{8l}}{2} \leq m(l) \leq 2 \lfloor \sqrt{l} \rfloor + 1 \\
+	\implies \frac{1}{2} + \frac{2\sqrt{2l}}{2} \leq m(l) \leq 2 \lfloor \sqrt{l} \rfloor + 1 \\
+	\implies \frac{1}{2} + \sqrt{2l} \leq m(l) \leq 2 \lfloor \sqrt{l} \rfloor + 1 \\
+	\implies \sqrt{2l} \leq m(l) \leq 2\sqrt{l} + 1
+\end{align*}
