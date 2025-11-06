@@ -1,7 +1,9 @@
 \underline{\textit{(iv) Quels liens peut-on établir entre les versions rectiligne et circulaire du problème?}}.
 
-\vspace{2\baselineskip}
+\vspace{1\baselineskip}
 
-\begin{center}
-	\Huge\textbf{TODO}
-\end{center}
+Considérons une règle circulaire de longueur $l$ avec $m(l)$ graduations permettant de mesurer toutes les longueurs entières de $1$ à $l$. La solution peut donc comprendre moins de graduations puisqu'une distance entre 2 graduations peut être mesurée dans les 2 sens (sens horaire et antihoraire). Il faut donc seulement pouvoir mesurer des distances entre 1 et $\lfloor \frac{l}{2} \rfloor$.
+Ainsi, si l'on note $m_{c}(l)$ le nombre minimal de graduations pour une règle circulaire de longueur $l$, on a la relation suivante:
+\[
+m_{c}(l) \leq m( \lfloor l/2 \rfloor ) \leq 2\sqrt{ \lfloor l/2 \rfloor } \leq \sqrt{2l}.
+\]
