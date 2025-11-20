@@ -1,22 +1,22 @@
-\underline{\textit{(iii) Trouver une méthode de construction qui se rapproche de $m(l)$}}.
+\underline{\textit{(ii) Trouver une méthode de construction qui se rapproche de $m(l)$}}.
 
 \vspace{1\baselineskip}
 
-Pour approcher la valeur de $m(l)$, nous pouvons utiliser la méthode utilisée dans le point (ii). Elle consiste à utiliser pour un $1 \leq n \leq l$ fixé:
+Pour approcher la valeur de $m(\ell)$, nous pouvons utiliser la méthode utilisée dans le point (ii). Elle consiste à utiliser pour un $1 \leq n \leq \ell$ fixé:
 
 \begin{itemize}
 	\item Les $n$ premières graduations: $0, 1, 2, \ldots, n-1$ $\implies n$ graduations;
-	\item Tous les multiples suivants de $n$ soustrait de 1: $2n-1, 3n-1, \ldots$, jusqu'à la plus grande valeur inférieure à $l$ $\implies \left\lfloor \frac{l}{n} \right\rfloor - 1$ graduations;
-	\item Le nombre $l$ lui-même $\implies$ 1 graduation.
+	\item Tous les multiples suivants de $n$ soustrait de 1: $2n-1, 3n-1, \ldots$, jusqu'à la plus grande valeur inférieure à $\ell$ $\implies \left\lfloor \frac{\ell}{n} \right\rfloor - 1$ graduations;
+	\item Le nombre $\ell$ lui-même $\implies$ 1 graduation.
 \end{itemize}
 
 Ainsi, le nombre total de graduations utilisées pour un $n$ fixé est:
 \[
-k = n + \left\lfloor \frac{l}{n} \right\rfloor - 1 + 1 = n + \left\lfloor \frac{l}{n} \right\rfloor.
+k = n + \left\lfloor \frac{\ell}{n} \right\rfloor - 1 + 1 = n + \left\lfloor \frac{\ell}{n} \right\rfloor.
 \]
 
-Après certains essais, nous remarquons que la valeur de $k$ est minimisée lorsque $n$ est proche de $\sqrt{l}$. En effet, en posant $n = \lceil \sqrt{l} \rceil$, nous obtenons:
+Après certains essais, nous remarquons que la valeur de $k$ est minimisée lorsque $n$ est proche de $\sqrt{\ell}$. En effet, en posant $n = \lceil \sqrt{\ell} \rceil$, nous obtenons:
 
 \[
-k = \lceil \sqrt{l} \rceil + \left\lfloor \frac{l}{\lceil \sqrt{l} \rceil} \right\rfloor \approx 2\sqrt{l}.
+k = \lceil \sqrt{\ell} \rceil + \left\lfloor \frac{\ell}{\lceil \sqrt{\ell} \rceil} \right\rfloor \approx 2\sqrt{\ell}.
 \]

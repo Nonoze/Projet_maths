@@ -1,21 +1,21 @@
-\underline{\textit{(ii) Trouver des bornes pour $m(l)$}}.
+\underline{\textit{(iii) Trouver des bornes pour $m(\ell)$}}.
 
 \vspace{1\baselineskip}
 
-1. \textbf{Borne inférieure:} $m(l) \geq \frac{1+\sqrt{8l+1}}{2}$.
+1. \textbf{Borne inférieure:} $m(\ell) \geq \frac{1+\sqrt{8\ell+1}}{2}$.
 
 \begin{itemize}[leftmargin=2cm]
-	\item \textbf{Démonstration:} Pour tout $n \in \mathbb{N}$, le nombre de paires $(i,j)$ avec $1 \leq i < j \leq n$ est donné par $\binom{n}{2} = \frac{n(n-1)}{2}$. Si le nombre de graduations est $m(l)$, alors le nombre de différences distinctes que l'on peut obtenir est au plus $\binom{m(l)}{2}$. Pour mesurer toutes les longueurs de 1 à $l$, il faut donc que:
+	\item \textbf{Démonstration:} Pour tout $n \in \mathbb{N}$, le nombre de paires $(i,j)$ avec $1 \leq i < j \leq n$ est donné par $\binom{n}{2} = \frac{n(n-1)}{2}$. Si le nombre de graduations est $m(\ell)$, alors le nombre de différences distinctes que l'on peut obtenir est au plus $\binom{m(\ell)}{2}$. Pour mesurer toutes les longueurs de 1 à $\ell$, il faut donc que:
 	\[
-		\binom{m(l)}{2} \geq l
+		\binom{m(\ell)}{2} \geq \ell
 	\]
 	Cela conduit à l'inégalité quadratique:
 	\[
-		\frac{m(m-1)}{2} \geq l \iff m^2 - m - 2l \geq 0
+		\frac{m(m-1)}{2} \geq \ell \iff m^2 - m - 2\ell \geq 0
 	\]
 	En résolvant cette inégalité, on obtient:
 	\[
-		m(l) \geq \frac{1 + \sqrt{1 + 8l}}{2}
+		m(\ell) \geq \frac{1 + \sqrt{1 + 8\ell}}{2}
 	\]
 	Ceci établit la borne inférieure.
 
@@ -27,13 +27,13 @@
 \vspace{1\baselineskip}
 
 
-2. \textbf{Borne supérieure:} $m(l) \leq 2\sqrt{l} + 1$.
+2. \textbf{Borne supérieure:} $m(\ell) \leq 2\sqrt{\ell} + 1$.
 
 \begin{itemize}[leftmargin=2cm]
-	\item \textbf{Démonstration:} Considérons une règle avec des graduations placées aux positions $0, 1, 2, \ldots, n-1$ et aux positions $2n - 1, 3n - 1, \ldots, kn - 1, l$ où $k = \lfloor \frac{l}{n} \rfloor$. Le nombre total de graduations est donc $n + k - 1 + 1 = n + k = n + \lfloor \frac{l}{n} \rfloor$.
-	Pour mesurer toutes les longueurs de 1 à $l$, il suffit de choisir $n$ tel que $n \approx \sqrt{l}$. En effet, en choisissant $n = \lceil \sqrt{l} \rceil$, on a:
+	\item \textbf{Démonstration:} Considérons une règle avec des graduations placées aux positions $0, 1, 2, \ldots, n-1$ et aux positions $2n - 1, 3n - 1, \ldots, kn - 1, \ell$ où $k = \lfloor \frac{\ell}{n} \rfloor$. Le nombre total de graduations est donc $n + k - 1 + 1 = n + k = n + \lfloor \frac{\ell}{n} \rfloor$.
+	Pour mesurer toutes les longueurs de 1 à $\ell$, il suffit de choisir $n$ tel que $n \approx \sqrt{\ell}$. En effet, en choisissant $n = \lceil \sqrt{\ell} \rceil$, on a:
 	\[
-		m(l) \leq n + \lfloor \frac{l}{n} \rfloor \leq \lceil \sqrt{l} \rceil + \lfloor \frac{l}{\lceil \sqrt{l} \rceil} \rfloor \leq \lceil \sqrt{l} \rceil + \lfloor \sqrt{l} \rfloor \leq 2 \lfloor \sqrt{l} \rfloor + 1
+		m(\ell) \leq n + \lfloor \frac{\ell}{n} \rfloor \leq \lceil \sqrt{\ell} \rceil + \lfloor \frac{\ell}{\lceil \sqrt{\ell} \rceil} \rfloor \leq \lceil \sqrt{\ell} \rceil + \lfloor \sqrt{\ell} \rfloor \leq 2 \lfloor \sqrt{\ell} \rfloor + 1
 	\]
 	Ceci établit la borne supérieure.
 \end{itemize}
@@ -45,9 +45,9 @@
 Nous avons donc montré que:
 
 \begin{align*}
-	\frac{1 + \sqrt{1 + 8l}}{2} \leq m(l) \leq 2 \lfloor \sqrt{l} \rfloor + 1 \\
-	\implies \frac{1 + \sqrt{8l}}{2} \leq m(l) \leq 2 \lfloor \sqrt{l} \rfloor + 1 \\
-	\implies \frac{1}{2} + \frac{2\sqrt{2l}}{2} \leq m(l) \leq 2 \lfloor \sqrt{l} \rfloor + 1 \\
-	\implies \frac{1}{2} + \sqrt{2l} \leq m(l) \leq 2 \lfloor \sqrt{l} \rfloor + 1 \\
-	\implies \sqrt{2l} \leq m(l) \leq 2\sqrt{l} + 1
+	\frac{1 + \sqrt{1 + 8\ell}}{2} \leq m(\ell) \leq 2 \lfloor \sqrt{\ell} \rfloor + 1 \\
+	\implies \frac{1 + \sqrt{8\ell}}{2} \leq m(\ell) \leq 2 \lfloor \sqrt{\ell} \rfloor + 1 \\
+	\implies \frac{1}{2} + \frac{2\sqrt{2\ell}}{2} \leq m(\ell) \leq 2 \lfloor \sqrt{\ell} \rfloor + 1 \\
+	\implies \frac{1}{2} + \sqrt{2\ell} \leq m(\ell) \leq 2 \lfloor \sqrt{\ell} \rfloor + 1 \\
+	\implies \sqrt{2\ell} \leq m(\ell) \leq 2\sqrt{\ell} + 1
 \end{align*}

@@ -1,0 +1,20 @@
+\underline{\textit{(v) Déterminer à partir de quel \( \ell \) qu'il n'existe pas de solution parfaite. Une solution parfaite est une configuration de graduations telle que chaque longueur de 1 à \( \ell \) soit mesurable d'une seule manière.}}
+
+\vspace{1\baselineskip}
+
+Pour simplifier l'analyse, nous allons définir $n$ comme le nombre de graduations utilisées.
+
+Une solution est parfaite si et seulement si $ \ell = \binom{n}{2}$.
+Nous pouvons réécrire la règle en fonction de la distance entre les graduations adjacentes. Soit \( d_i \) la distance entre la graduation \( i \) et la graduation \( i+1 \) pour \( i = 1, 2, \ldots, n-1 \). Ansi, la somme de toutes ces distances vaut \( \ell \).
+
+Sous cette forme, pour qu'une solution parfaite existe, il est nécéssaire que chaque somme de sous-tableaux contigus des distances \( d_i \) soit unique (condition d'unicité) et couvre toutes les longueurs de 1 à \( \ell \). C'est à dire, pour tout entier $k \in [1, \ell]$, il existe un unique couple \( (i, j) \) tel que $k = d_i + \ldots + d_j$.
+
+Cette ... nous permet d'utiliser des sommes et non des différences.
+
+Une solution parfaite exige que tous les \( d_i \) soient des naturels distincts non nuls. La plus petite somme de $n-1$ naturels distincts non nuls vaut $1 + 2 + \ldots + (n-1) = \frac{(n-1)n}{2} = \binom{n}{2} = \ell$.
+
+Ansi, le tableau $d$ est une permutation de $[1, 2, \ldots, n-1]$ telle que toutes les sommes de sous-tableaux contigus soient différentes.
+
+Depuis cela, prouvons qu'aucune solution parfaite n'existe pour \(n \geq 5\). En effet, la distance de valeur $1$ ne peut pas être adjacente qu'à une distance de valeur $n-1$ car la somme de ces deux distances doit être strictement supérieure à $n - 1$ pour respecter la condition d'unicité. Nous aurons donc forcément \( d_1 = 1 \) ou \( d_{n-1} = 1 \) pour n'avoir qu'un adjacent. Supposons que \( d_1 = 1 \) pour plus de facilité. Il faut alors que \( d_2 = n-1 \). On doit ensuite placer la valeur $2$, qui ne peut être qu'à côté de la valeur $n-1$ car la somme avec son adjacent doit être strictement supérieure à $n$. Nous devons donc avoir $d_3 = 2$. Mais il n'y plus a aucune valeur à placer à l'emplacement $d_4$ car tous les nombres restants formeraient une somme d'au plus $n$, ce qui crérait des sommes doublons. Par conséquent, aucune solution parfaite n'existe pour \( n \geq 5 \).
+
+Ainsi, la plus grande valeur de \( \ell \) pour laquelle une solution parfaite existe est obtenue pour \( n = 4 \).
