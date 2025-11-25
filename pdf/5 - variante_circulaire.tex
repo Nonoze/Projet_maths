@@ -1,0 +1,21 @@
+\subsubsection*{(v) Déterminer les liens entre les versions rectiligne et circulaire du problème.}
+
+Considérons une règle circulaire de longueur $l$ avec $m(l)$ graduations permettant de mesurer toutes les longueurs entières de $1$ à $l$. La solution peut donc comprendre moins de graduations puisqu'une distance entre 2 graduations peut être mesurée dans les 2 sens (sens horaire et antihoraire). Il faut donc seulement pouvoir mesurer des distances entre 1 et $\lfloor \frac{l}{2} \rfloor$.
+Ainsi, si l'on note $m_{c}(l)$ le nombre minimal de graduations pour une règle circulaire de longueur $l$, on a la relation suivante:
+\[
+m_{c}(l) \leq m( \lfloor l/2 \rfloor ) \leq 2\sqrt{ \lfloor l/2 \rfloor } \leq \sqrt{2l}.
+\]
+
+Au niveau des solutions parfaites, il est possible de faire des généralisations.
+
+Tout d'abord, pour qu'une solution parfaite existe, il faut que la règle soit de longueur $\ell = q(q+1) + 1 = q^2 + q + 1$. En effet, il faut que la distance entre chaque paire de graduations soit unique. Pour un nombre $n = q+1$ de graduations, il y a donc $n(n-1) = q(q+1)$ paires, et donc $q(q+1)$ distances distinctes. La longueur vaut cette distance additionnée à 1: $\ell = q(q+1) + 1 = q^2 + q + 1$.
+
+Maintenant que nous avons nos critères, il faut déterminer pour quels $q$ il est possible de construire une solution parfaite.
+
+\vspace{1\baselineskip}
+
+\textbf{Proposition:} Une solution parfaite pour la règle circulaire de longueur $\ell = q^2 + q + 1$ avec $n = q + 1$ graduations existe si et seulement si $q$ est une puissance d'un nombre premier.
+
+\vspace{2\baselineskip}
+
+Solution attendue: $q = p^k$ où p est un nombre premier et k est un naturel non nul (séquence: \href{https://oeis.org/A335865}{OEIS A335865}).
