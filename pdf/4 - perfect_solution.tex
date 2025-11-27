@@ -4,17 +4,52 @@
 
 Pour simplifier l'analyse, nous allons définir $n$ comme le nombre de graduations utilisées.
 
-Une solution est parfaite si et seulement si $ \ell = \binom{n}{2}$.
-Nous pouvons réécrire la règle en fonction de la distance entre les graduations adjacentes. Soit \( d_i \) la distance entre la graduation \( i \) et la graduation \( i+1 \) pour \( i = 1, 2, \ldots, n-1 \). Ansi, la somme de toutes ces distances vaut \( \ell \).
+\medskip
 
-Sous cette forme, pour qu'une solution parfaite existe, il est nécéssaire que chaque somme de sous-tableaux contigus des distances \( d_i \) soit unique (condition d'unicité) et couvre toutes les longueurs de 1 à \( \ell \). C'est à dire, pour tout entier $k \in [1, \ell]$, il existe un unique couple \( (i, j) \) tel que $k = d_i + \ldots + d_j$.
+Une solution est parfaite si et seulement si $ \ell = \binom{n}{2} $.  
+Nous pouvons réécrire la règle en fonction de la distance entre les graduations adjacentes.  
+Soit \( d_i \) la distance entre la graduation \( i \) et la graduation \( i+1 \) pour \( i = 1, 2, \ldots, n-1 \).  
+Ansi, la somme de toutes ces distances vaut \( \ell \).
 
-Cette ... nous permet d'utiliser des sommes et non des différences.
+\medskip
 
-Une solution parfaite exige que tous les \( d_i \) soient des naturels distincts non nuls. La plus petite somme de $n-1$ naturels distincts non nuls vaut $1 + 2 + \ldots + (n-1) = \frac{(n-1)n}{2} = \binom{n}{2} = \ell$.
+Sous cette forme, la condition d’existence d’une solution parfaite revient à exiger que les sommes de tous les sous-tableaux contigus des distances \( d_i \) soient distinctes et couvrent exactement l’ensemble des longueurs de \( 1 \) à \( \ell \).  
+Autrement dit, pour tout entier $k \in [1, \ell]$, il existe un unique couple \( (i, j) \) tel que  
+\[
+    k = d_i + d_{i+1} + \ldots + d_j .
+\]
 
-Ansi, le tableau $d$ est une permutation de $[1, 2, \ldots, n-1]$ telle que toutes les sommes de sous-tableaux contigus soient différentes.
+\medskip
 
-Depuis cela, prouvons qu'aucune solution parfaite n'existe pour \(n \geq 5\). En effet, la distance de valeur $1$ ne peut pas être adjacente qu'à une distance de valeur $n-1$ car la somme de ces deux distances doit être strictement supérieure à $n - 1$ pour respecter la condition d'unicité. Nous aurons donc forcément \( d_1 = 1 \) ou \( d_{n-1} = 1 \) pour n'avoir qu'un adjacent. Supposons que \( d_1 = 1 \) pour plus de facilité. Il faut alors que \( d_2 = n-1 \). On doit ensuite placer la valeur $2$, qui ne peut être qu'à côté de la valeur $n-1$ car la somme avec son adjacent doit être strictement supérieure à $n$. Nous devons donc avoir $d_3 = 2$. Mais il n'y plus a aucune valeur à placer à l'emplacement $d_4$ car tous les nombres restants formeraient une somme d'au plus $n$, ce qui crérait des sommes doublons. Par conséquent, aucune solution parfaite n'existe pour \( n \geq 5 \).
+Ce changement de perspective nous permet de raisonner en termes de sommes plutôt qu'en termes de différences.
 
-Ainsi, la plus grande valeur de \( \ell \) pour laquelle une solution parfaite existe est obtenue pour \( n = 4 \).
+\medskip
+
+Une solution parfaite exige que tous les \( d_i \) soient des naturels distincts non nuls.  
+Or, la plus petite somme de $n-1$ naturels distincts non nuls vaut  
+\[
+1 + 2 + \ldots + (n-1) = \frac{(n-1)n}{2} = \binom{n}{2} = \ell .
+\]
+
+\medskip
+
+Le tableau $d$ est donc formé d'une permutation de $[1, 2, \ldots, n-1]$ telle que toutes les sommes de sous-tableaux contigus soient différentes.
+
+\medskip
+
+Montrons maintenant qu’il n’existe pas de solution parfaite pour \( n \geq 5 \). \\
+Pour éviter que deux longueurs différentes soient générées par des segments identiques, la valeur \(1\) ne peut être adjacente qu’à \(n-1\).  
+On doit donc placer \(1\) à l’une des extrémités du tableau, disons \( d_1 = 1 \), ce qui impose \( d_2 = n-1 \).  
+La valeur \(2\) doit également être adjacente à \(n-1\), sous peine de produire une longueur déjà réalisable.  
+On fixe donc \( d_3 = 2 \).  
+Aucune des valeurs restantes ne peut donc être placée en \( d_4 \) sans engendrer une somme déjà atteinte auparavant.  
+Ainsi, la construction devient impossible pour \( n \geq 5 \).
+
+\medskip
+
+Nous avons donc démontrer que la plus grande valeur de \( \ell \) pour laquelle une solution parfaite existe est \( n = 4 \).
+
+
+\textcolor{red}{Peut-être donner la solution parfaitre pour n=4 ?
+Peut-être répondre par la plus grande valeur l possible et non n pour respecter l'énoncé ?
+}
