@@ -1,14 +1,18 @@
 \subsubsection*{(v) Déterminer les liens entre les versions rectiligne et circulaire du problème.}
 
-Considérons une règle circulaire de longueur $l$ avec $m(l)$ graduations permettant de mesurer toutes les longueurs entières de $1$ à $l$. La solution peut donc comprendre moins de graduations puisqu'une distance entre 2 graduations peut être mesurée dans les 2 sens (sens horaire et antihoraire). Il faut donc seulement pouvoir mesurer des distances entre 1 et $\lfloor \frac{l}{2} \rfloor$.
+Considérons une règle circulaire de longueur $l$ avec $m(l)$ graduations permettant de mesurer toutes les longueurs entières de $1$ à $l$. La solution peut donc comprendre moins de graduations puisqu'une distance entre 2 graduations peut être mesurée dans les 2 sens (sens horaire et antihoraire). Il faut donc seulement pouvoir mesurer des distances entre 1 et $\left\lfloor \frac{l}{2} \right\rfloor$.
 Ainsi, si l'on note $m_{c}(l)$ le nombre minimal de graduations pour une règle circulaire de longueur $l$, on a la relation suivante:
 \[
-m_{c}(l) \leq m( \lfloor l/2 \rfloor ) \leq 2\sqrt{ \lfloor l/2 \rfloor } \leq \sqrt{2l}.
+m_{c}(l) \leq m( \left\lfloor l/2 \right\rfloor ) \leq 2\sqrt{ \left\lfloor l/2 \right\rfloor } \leq \sqrt{2l}.
 \]
 
 Au niveau des solutions parfaites, il est possible de faire des généralisations.
 
+\medskip
+
 Tout d'abord, pour qu'une solution parfaite existe, il faut que la règle soit de longueur $\ell = q(q+1) + 1 = q^2 + q + 1$. En effet, il faut que la distance entre chaque paire de graduations soit unique. Pour un nombre $n = q+1$ de graduations, il y a donc $n(n-1) = q(q+1)$ paires, et donc $q(q+1)$ distances distinctes. La longueur vaut cette distance additionnée à 1: $\ell = q(q+1) + 1 = q^2 + q + 1$.
+
+\medskip
 
 Maintenant que nous avons nos critères, il faut déterminer pour quels $q$ il est possible de construire une solution parfaite.
 

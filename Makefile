@@ -2,13 +2,16 @@ PDF_DIR := pdf
 PREAMBLE := $(PDF_DIR)/preambule.tex
 MAIN := $(PDF_DIR)/projet.tex
 
-.PHONY: all clean projet help parts
+.PHONY: all clean main help parts
+
+all:
+	@$(MAKE) main
 
 help:
-	@echo "  make projet   # compile pdf/projet.pdf (fichier principal)"
+	@echo "  make main   # compile pdf/projet.pdf (fichier principal)"
 	@echo "  make clean    # supprime fichiers parasites et (conserve projet.pdf)"
 
-projet:
+main:
 	@if command -v latexmk >/dev/null 2>&1; then \
 		echo "Compilation du projet principal avec latexmk..."; \
 		latexmk -pdf -silent -output-directory=$(PDF_DIR) $(MAIN); \
