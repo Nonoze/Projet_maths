@@ -2,7 +2,7 @@
 
 \vspace{1\baselineskip}
 
-Pour simplifier l'analyse, nous allons définir $n$ comme le nombre de graduations utilisées.
+Pour simplifier l'analyse, nous allons définir $n = m(\ell)$ (le nombre de graduations utilisées).
 
 \medskip
 
@@ -13,7 +13,7 @@ Ansi, la somme de toutes ces distances vaut \( \ell \).
 
 \medskip
 
-Sous cette forme, la condition d’existence d’une solution parfaite revient à exiger que les sommes de tous les sous-tableaux contigus des distances \( d_i \) soient distinctes et couvrent exactement l’ensemble des longueurs de \( 1 \) à \( \ell \).  
+Sous cette forme, la condition d'existence d'une solution parfaite revient à exiger que les sommes de tous les sous-tableaux contigus des distances \( d_i \) soient distinctes et couvrent exactement l'ensemble des longueurs de \( 1 \) à \( \ell \).  
 Autrement dit, pour tout entier $k \in [1, \ell]$, il existe un unique couple \( (i, j) \) tel que  
 \[
     k = d_i + d_{i+1} + \ldots + d_j .
@@ -37,9 +37,9 @@ Le tableau $d$ est donc formé d'une permutation de $[1, 2, \ldots, n-1]$ telle 
 
 \medskip
 
-Montrons maintenant qu’il n’existe pas de solution parfaite pour \( n \geq 5 \). \\
-Pour éviter que deux longueurs différentes soient générées par des segments identiques, la valeur \(1\) ne peut être adjacente qu’à \(n-1\).  
-On doit donc placer \(1\) à l’une des extrémités du tableau, disons \( d_1 = 1 \), ce qui impose \( d_2 = n-1 \).  
+Montrons maintenant qu'il n'existe pas de solution parfaite pour \( n \geq 5 \). \\
+Pour éviter qu'une longueur soit générée par des sous-tableaux différents, la valeur \(1\) ne peut être adjacente qu'à \(n-1\).  
+On doit donc placer \(1\) à l'une des extrémités du tableau, disons \( d_1 = 1 \), ce qui impose \( d_2 = n-1 \).  
 La valeur \(2\) doit également être adjacente à \(n-1\), sous peine de produire une longueur déjà réalisable.  
 On fixe donc \( d_3 = 2 \).  
 Aucune des valeurs restantes ne peut donc être placée en \( d_4 \) sans engendrer une somme déjà atteinte auparavant.  
@@ -47,19 +47,23 @@ Ainsi, la construction devient impossible pour \( n \geq 5 \).
 
 \medskip
 
-Nous avons donc démontrer que la plus grande valeur de \( \ell \) pour laquelle une solution parfaite existe est \( n = 4 \) (et \( \ell = 6 \)).
+Nous avons donc démontré que la plus grande valeur de \( \ell \) pour laquelle une solution parfaite existe est \( n = 4 \) (et \( \ell = 6 \)).
 
 \medskip
 
-Les solutions parfaites sont donc les suivantes:
+Les solutions parfaites sont résumées dans le tableau suivant:
 
-\begin{itemize}
-    \item Pour \( n = 2 \) (i.e. \( \ell = 1 \)): \\
-    Graduations en \( \{0, 1\} \)
-    
-    \item Pour \( n = 3 \) (i.e. \( \ell = 3 \)): \\
-    Graduations en \( \{0, 1, 3\} \)
-    
-    \item Pour \( n = 4 \) (i.e. \( \ell = 6 \)): \\
-    Graduations en \( \{0, 1, 4, 6\} \) ou \( \{0, 2, 5, 6\} \)
-\end{itemize}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\( m(\ell) \) & \( \ell \) & Graduations \\
+\hline
+2 & 1 & \( \{0, 1\} \) \\
+\hline
+3 & 3 & \( \{0, 1, 3\} \) \\
+\hline
+\multirow{2}{*}{4} & \multirow{2}{*}{6} & \( \{0, 1, 4, 6\} \) \\
+& & \( \{0, 2, 5, 6\} \) \\
+\hline
+\end{tabular}
+\end{center}

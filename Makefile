@@ -11,6 +11,10 @@ help:
 	@echo "  make main   # compile pdf/projet.pdf (fichier principal)"
 	@echo "  make clean    # supprime fichiers parasites et (conserve projet.pdf)"
 
+graphs:
+	cd data && python3 graphs.py && cd ..
+	make main
+
 main:
 	@if command -v latexmk >/dev/null 2>&1; then \
 		echo "Compilation du projet principal avec latexmk..."; \

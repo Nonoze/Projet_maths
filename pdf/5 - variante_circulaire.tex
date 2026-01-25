@@ -1,10 +1,28 @@
 \subsubsection*{(v) Déterminer les liens entre les versions rectiligne et circulaire du problème.}
 
-Considérons une règle circulaire de longueur $l$ avec $m(l)$ graduations permettant de mesurer toutes les longueurs entières de $1$ à $l$. La solution peut donc comprendre moins de graduations puisqu'une distance entre 2 graduations peut être mesurée dans les 2 sens (sens horaire et antihoraire). Il faut donc seulement pouvoir mesurer des distances entre 1 et $\left\lfloor \frac{l}{2} \right\rfloor$.
-Ainsi, si l'on note $m_{c}(l)$ le nombre minimal de graduations pour une règle circulaire de longueur $l$, on a la relation suivante:
+Prenons maintenant une règle circulaire au lieu d'une règle rectiligne. Cela signifie que la règle est fermée sur elle-même, formant un cercle de longueur $\ell$. Le problème revient à pouvoir mesurer tous les arcs de cercle de longueur entière entre $1$ et $\ell$ à l'aide de graduations placées sur ce cercle. 
+
+Définissons $m_{c}(\ell)$ comme le nombre minimal de graduations à placer.
+
+La solution peut donc comprendre moins de graduations puisque la distance entre 2 graduations peut se faire dans les deux sens (sens horaire et antihoraire). Il faut donc seulement pouvoir mesurer des distances entre 1 et $\left\lfloor \frac{\ell}{2} \right\rfloor$. On obtient donc la relation suivante:
 \[
-m_{c}(l) \leq m( \left\lfloor l/2 \right\rfloor ) \leq 2\sqrt{ \left\lfloor l/2 \right\rfloor } \leq \sqrt{2l}.
+m_{c}(\ell) \leq m( \left\lfloor \ell/2 \right\rfloor ) \leq 2\sqrt{ \left\lfloor \ell/2 \right\rfloor } \leq \sqrt{2\ell}.
 \]
+
+Nous pouvons aussi trouver une borne inférieure pour $m_{c}(\ell)$ en utilisant le même raisonnement que pour la règle rectiligne. En effet, avec $n$ graduations, on peut mesurer au plus $n(n-1)$ distances différentes . Il faut donc que:
+\[n(n-1) \geq \ell .\]
+
+Cela revient à dire que:
+
+\[
+m_{c}(\ell) \geq \frac{1 + \sqrt{1 + 4\ell}}{2} \sim \sqrt{\ell}.
+\]
+
+On encadre donc $m_{c}(\ell)$ de la façon suivante:
+\[
+\sqrt{\ell} \lesssim m_{c}(\ell) \lesssim \sqrt{2\ell}.
+\]
+
 
 Au niveau des solutions parfaites, il est possible de faire des généralisations.
 
@@ -18,7 +36,7 @@ Maintenant que nous avons nos critères, il faut déterminer pour quels $q$ il e
 
 \vspace{1\baselineskip}
 
-\textbf{Proposition:} Une solution parfaite pour la règle circulaire de longueur $\ell = q^2 + q + 1$ avec $n = q + 1$ graduations existe si et seulement si $q$ est une puissance d'un nombre premier.
+\textbf{Proposition:} Une solution parfaite pour la règle circulaire de longueur $\ell = q^2 + q + 1$ avec $n = q + 1$ graduations existe lorsque $q$ est une puissance d'un nombre premier.
 
 \vspace{2\baselineskip}
 

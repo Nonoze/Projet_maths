@@ -2,7 +2,7 @@ import numpy as np
 from io import StringIO
 
 
-with open("../data/data.csv", "r") as f:
+with open("data.csv", "r") as f:
 	csv_text = f.read()
 
 arr = np.genfromtxt(StringIO(csv_text), delimiter=",", skip_header=1, dtype=int)
@@ -17,31 +17,30 @@ valid = length > 0
 x = length[valid]
 y = segment[valid] / np.sqrt(x)
 
-plt.plot(x, y, linewidth=1.5)
+plt.plot(x, y, linewidth=1.5, label=r'$\frac{m(\ell)}{\sqrt{\ell}}$')
 plt.axhline(1.8, linestyle=":", color="tab:red", linewidth=1.0, label="bornes")
 plt.axhline(1.7, linestyle=":", color="tab:red", linewidth=1.0)
-plt.xlabel("length")
-plt.ylabel("segment / sqrt(length)")
-plt.title("segment / sqrt(length)")
+plt.xlabel(r'$\ell$')
+plt.ylabel(r'$\frac{m(\ell)}{\sqrt{\ell}}$')
+plt.title(r'Rapport $\frac{m(\ell)}{\sqrt{\ell}}$ en fonction de la longueur $\ell$')
 plt.legend()
 plt.tight_layout()
 plt.savefig("graph_segment_over_sqrt_length.png")
-plt.show()
+# plt.show()
 
 plt.figure()
 fx = segment[valid]
 
-plt.plot(x, fx, label="f(x)", linewidth=1.5)
-plt.xlabel("x")
-plt.ylabel("f(x)")
-plt.title("f(x)")
+plt.plot(x, fx, label=r'$m(\ell)$', linewidth=1.5)
+plt.xlabel(r'$\ell$')
+plt.ylabel(r'$m(\ell)$')
+plt.title(r'Nombre de graduations $m(\ell)$ en fonction de la longueur $\ell$')
 plt.legend()
 plt.tight_layout()
 plt.savefig("graph_f.png")
-plt.show()
+# plt.show()
 plt.figure()
-plt.plot(x, fx, label="f(x)", linewidth=1.5)
-
+plt.plot(x, fx, label=r'$m(\ell)$', linewidth=1.5)
 
 # Calcul des fonctions h1..h6
 mask_50 = x > 50
@@ -67,12 +66,11 @@ h6 = 2 * sx
 plt.plot(x, h5, linestyle="--", color="tab:red", label="bornes")
 plt.plot(x, h6, linestyle="--", color="tab:red")
 
-plt.xlabel("x")
-plt.ylabel("f(x)")
+plt.xlabel(r'$\ell$')
+plt.ylabel(r'$m(\ell)$')
 # plt.title("f(x) et fonctions h1..h6")
-plt.title("f(x) et bornes")
+plt.title(r'Nombre de graduations $m(\ell)$ en fonction de la longueur $\ell$ avec bornes')
 plt.legend()
 plt.tight_layout()
 plt.savefig("graph_f_bornes.png")
-plt.show()
-
+# plt.show()
