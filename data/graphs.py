@@ -74,3 +74,19 @@ plt.legend()
 plt.tight_layout()
 plt.savefig("graph_f_bornes.png")
 # plt.show()
+plt.figure()
+
+
+
+plt.plot(x, fx, label=r'$m(\ell)$', linewidth=1.5)
+plt.plot(x, np.sqrt(3*x+2.05), label=r'$\sqrt{3\ell + 2.05}$', linewidth=1.5)
+#résidus
+residus = fx - np.sqrt(3*x+2.05)
+plt.plot(x, residus, label="résidus", linestyle="-", color="xkcd:lightish blue")
+plt.xlabel(r'$\ell$')
+plt.ylabel(r'$m(\ell)$')
+plt.title(r'Fonction se rapprochant de $m(\ell)$')
+plt.legend()
+plt.tight_layout()
+plt.savefig("graph_f_fit.png")
+plt.figure()
